@@ -1,0 +1,19 @@
+version: '3.0'
+services:
+  template_rest_api:
+    image: "template_spring_boot"
+    container_name: "template_spring_boot"
+    build: .
+    env_file:
+      - .env
+    networks:
+      - base-network
+    ports:
+      - 8080:8080
+    environment:
+      - POSTGRES_URI=${POSTGRES_URI}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+networks:
+  base-network:
+    external: true
