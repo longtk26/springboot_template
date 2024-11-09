@@ -9,7 +9,7 @@ import lombok.Data;
 public class UserRequestDTO {
     @NotNull(message = "userName can not be null")
     @NotEmpty(message = "userName can not be empty")
-    private String userName;
+    private String name;
 
     @NotNull(message = "email can not be null")
     @Email(message = "email is invalid")
@@ -17,6 +17,8 @@ public class UserRequestDTO {
 
     private String address;
 
-    @NotNull(message = "email can not be null")
+    @NotNull(message = "password can not be null")
+    private String password;
+
     private Integer age;
 }

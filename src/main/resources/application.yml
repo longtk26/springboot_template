@@ -30,3 +30,5 @@ jwt:
 
 module-name: youtube
 api-version: 3.0
+server:
+  port: 8081

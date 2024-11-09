@@ -15,12 +15,18 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_name",columnDefinition = "varchar(255)",nullable = false)
-    private String userName;
+    @Column(columnDefinition = "varchar(255)",nullable = false)
+    private String name;
 
     @Column(columnDefinition = "varchar(255)", unique = true)
-    private String userEmail;
+    private String email;
 
     @Column(columnDefinition = "varchar(255)", nullable = false)
     private String password;
+
+    @Column(columnDefinition = "varchar(255)", nullable = true)
+    private String address;
+
+    @Column(columnDefinition = "int", nullable = true)
+    private Integer age;
 }

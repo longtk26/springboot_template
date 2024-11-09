@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -96,7 +97,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createUser(@RequestBody UserRequestDTO userBody) {
+    public ResponseEntity createUser(@Valid @RequestBody UserRequestDTO userBody) {
         this.userService.createUser(userBody);
 
         return new SuccessResponse<>(
